@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% load static %} 
+ 
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'index.css'%}" />
+
+<div class="flex-container">
+  {% for meal_item in meal %}
+  
+    <div class="card" style="width: 18rem">
+      <img src="{{meal_item.strMealThumb}}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{meal_item.strMeal}}</h5>
+        <p class="card-text">
+          Created with whole wheat flour and fried to soft, crispy perfection,
+          BeaverTails trace their origins from bannock, a non-rising dough
+          stretched.
+        </p>
+      </div>
+    </div>
+ 
+
+ {% endfor %} 
+</div>
+{% endblock content %}
